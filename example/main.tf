@@ -19,6 +19,7 @@ module "single-virtual-machine" {
   size             = "medium"
   storage_profile  = "standard"
   tier             = "bronze"
+  ad_domain        = "hashicorp.local"
 }
 
 output "vm_name" {

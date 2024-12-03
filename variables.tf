@@ -5,7 +5,6 @@ variable "os_type" {
     condition     = var.os_type == "windows" || var.os_type == "linux"
     error_message = "The os_type must be either 'windows' or 'linux'."
   }
-  default = "linux"
 }
 
 variable "hostname" {
@@ -21,7 +20,6 @@ variable "size" {
     condition     = contains(["small", "medium", "large"], var.size)
     error_message = "Size must be one of 'small', 'medium', or 'large'."
   }
-  default = "medium"
 }
 
 variable "disk_0_size" {
@@ -35,7 +33,6 @@ variable "environment" {
     condition     = contains(["dev", "test", "prod"], var.environment)
     error_message = "Environment must be one of 'dev', 'test', or 'prod'."
   }
-  default = "dev"
 }
 
 variable "site" {
@@ -45,7 +42,6 @@ variable "site" {
     condition     = contains(["sydney", "canberra", "melbourne"], var.site)
     error_message = "Site must be one of 'east', 'west', or 'central'."
   }
-  default = "sydney"
 }
 
 variable "storage_profile" {
@@ -55,7 +51,6 @@ variable "storage_profile" {
     condition     = contains(["performance", "capacity", "standard"], var.storage_profile)
     error_message = "Storage profile must be one of 'performance', 'capacity', or 'standard'."
   }
-  default = "standard"
 }
 
 variable "tier" {
@@ -65,7 +60,6 @@ variable "tier" {
     condition     = contains(["gold", "silver", "bronze", "management"], var.tier)
     error_message = "Tier must be 'gold', 'silver', 'gold' or 'management'."
   }
-  default = "bronze"
 }
 
 variable "security_profile" {
@@ -75,7 +69,6 @@ variable "security_profile" {
     condition     = contains(["web-server", "db-server", "app-server"], var.security_profile)
     error_message = "Security profile must be one of 'web-server', 'app-server' or 'db-server'."
   }
-  default = "web-server"
 }
 
 variable "backup_policy" {
@@ -85,7 +78,6 @@ variable "backup_policy" {
     condition     = contains(["daily", "weekly", "monthly"], var.backup_policy)
     error_message = "Backup policy must be one of 'daily', 'weekly', or 'monthly'."
   }
-  default = "monthly"
 }
 
 variable "folder_path" {
