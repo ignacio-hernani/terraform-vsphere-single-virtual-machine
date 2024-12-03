@@ -2,8 +2,8 @@ terraform {
   cloud {
     organization = "tfo-apj-demos"
     workspaces {
-      project = "aaron-dev"
-      name = "my-first-vsphere-vm"
+      project = "20 - gcve-demo-workloads"
+      name = "terraform-vsphere-single-vm"
     }
   }
 }
