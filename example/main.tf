@@ -3,7 +3,7 @@ terraform {
     organization = "tfo-apj-demos"
     workspaces {
       project = "20 - gcve-demo-workloads"
-      name = "no-code-demo"
+      name = "terraform-vsphere-single-vm"
     }
   }
 }
