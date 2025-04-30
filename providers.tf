@@ -6,11 +6,11 @@ terraform {
     }
     hcp = {
       source  = "hashicorp/hcp"
-      version = "0.77.0"
+      version = "~> 0.104"
     }
-    ad = {
-      source  = "hashicorp/ad"
-      version = "0.4.4"
-    }
+    # ad = {
+    #   source  = "hashicorp/ad"
+    #   version = "0.4.4"
+    # }
   }
 }

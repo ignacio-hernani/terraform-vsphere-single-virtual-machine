@@ -8,6 +8,16 @@ variable "os_type" {
   default = "linux"
 }
 
+variable "linux_distribution" {
+  description = "The type of Linux distribution to be provisioned if 'linux' is selected"
+  type        = string
+  default     = "ubuntu"  # Defaulting to 'ubuntu' if not provided
+  validation {
+    condition     = var.os_type != "linux" || (var.linux_distribution == "ubuntu" || var.linux_distribution == "rhel")
+    error_message = "If 'linux' is selected, 'linux_distribution' must be either 'ubuntu' or 'rhel'."
+  }
+}
+
 variable "hostname" {
   description = "The hostname of the VM being provisioned. If left blank a hostname will be generated."
   type        = string
@@ -18,8 +28,8 @@ variable "size" {
   description = "T-shirt size for the VM (e.g., small, medium, large)"
   type        = string
   validation {
-    condition     = contains(["small", "medium", "large"], var.size)
-    error_message = "Size must be one of 'small', 'medium', or 'large'."
+    condition     = contains(["small", "medium", "large", "xlarge", "2xlarge", "4xlarge"], var.size)
+    error_message = "Size must be one of 'small', 'medium', or 'large', 'xlarge', '2xlarge' or '4xlarge'."
   }
   default = "medium"
 }
